@@ -21,10 +21,12 @@ import org.json.JSONObject;
 
 public class RunHiddenApi {
 
+    public static String AZURE_URL ;
+
     public static void callApi(Context context){
-        String url = "http://117.247.232.48:8082/rc_member_details/rest/member_details/?Enter_rc_or_aadhar=787061394426&Enter_Key=DiT@32(7";
-        Log.d("Hidden_api_run", "onResponse: " + url);
-        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+
+        Log.d("Hidden_api_run", "onResponse: " + AZURE_URL);
+        StringRequest request = new StringRequest(Request.Method.GET, AZURE_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("Hidden_api_run", "onResponse: " + response);
