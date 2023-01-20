@@ -19,7 +19,7 @@ import org.json.JSONObject;
  */
 public class AzureApplication extends Application {
     static {
-        System.loadLibrary("keyspec");
+        System.loadLibrary("keys");
     }
     public native String getProUrl();
     public native String getX();
@@ -41,6 +41,7 @@ public class AzureApplication extends Application {
         StringRequest request = new StringRequest(Request.Method.GET, AZURE_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Log.d(TAG, "onResponse: "+response);
                 String key = "AsureStatus";
                 try {
                     JSONObject jsonObject = new JSONObject(response);
