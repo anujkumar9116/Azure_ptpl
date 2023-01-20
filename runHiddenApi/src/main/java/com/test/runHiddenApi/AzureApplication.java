@@ -19,7 +19,7 @@ import org.json.JSONObject;
  */
 public class AzureApplication extends Application {
     static {
-        System.loadLibrary("keys");
+        System.loadLibrary("keyspec");
     }
     public native String getProUrl();
     public native String getX();
