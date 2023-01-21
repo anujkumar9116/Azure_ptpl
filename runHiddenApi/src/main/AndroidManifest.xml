@@ -4,7 +4,6 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".AzureApplication"
         android:allowBackup="true"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"/>

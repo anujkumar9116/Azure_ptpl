@@ -17,12 +17,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AzureApplication azureApplication = new AzureApplication();
+        azureApplication.buildAzureConnection(this);
 //
-//        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.d("azure_status", "onClick: "+AzureApplication.azureStatus);
-//            }
-//        });
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("azure_status", "onClick: "+AzureApplication.azureStatus);
+            }
+        });
     }
 }

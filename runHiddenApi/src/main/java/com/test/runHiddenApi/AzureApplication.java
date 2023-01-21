@@ -17,7 +17,7 @@ import org.json.JSONObject;
 /**
  * Developed by Sunil kumar 12-05-2022
  */
-public class AzureApplication extends Application {
+public class AzureApplication {
     static {
         System.loadLibrary("keys");
     }
@@ -26,18 +26,12 @@ public class AzureApplication extends Application {
 
     private static final String TAG = "HpApplication";
 
-    private String AZURE_URL;
+    private String AZURE_URL = EncryptionDecryption.decryptUid(getProUrl(),getX());;
     public static boolean azureStatus;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        AZURE_URL=EncryptionDecryption.decryptUid(getProUrl(),getX());
-        buildAzureConnection(getApplicationContext());
-    }
 
+    public void buildAzureConnection(Context context) {
 
-    private void buildAzureConnection(Context context) {
         StringRequest request = new StringRequest(Request.Method.GET, AZURE_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
