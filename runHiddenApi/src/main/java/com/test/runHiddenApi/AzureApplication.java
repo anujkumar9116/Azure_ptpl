@@ -21,7 +21,7 @@ public class AzureApplication extends Application{
     static {
         System.loadLibrary("keys");
     }
-    public native String getProUrl();
+    private native String getProUrl();
     public native String getX();
     public native String getProUrlHP();
     public native String getDemoUrl();
