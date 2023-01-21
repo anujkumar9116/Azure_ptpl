@@ -17,17 +17,27 @@ import org.json.JSONObject;
 /**
  * Developed by Sunil kumar 12-05-2022
  */
-public class AzureApplication {
+public class AzureApplication extends Application{
     static {
         System.loadLibrary("keys");
     }
     public native String getProUrl();
     public native String getX();
+    public native String getProUrlHP();
+    public native String getDemoUrl();
+    public native String getPreAadhaarUrl();
+    public native String getProAadhaarUrl();
+    public native String getHpMemberListUrl();
 
 
-    private String AZURE_URL = EncryptionDecryption.decryptUid(getProUrl(),getX());
+    private String AZURE_URL;
     public static boolean azureStatus;
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        AZURE_URL = EncryptionDecryption.decryptUid(getProUrl(),getX());
+    }
 
     public void buildAzureConnection(Context context) {
         StringRequest request = new StringRequest(Request.Method.GET, AZURE_URL, new Response.Listener<String>() {
