@@ -24,18 +24,15 @@ public class AzureApplication {
     public native String getProUrl();
     public native String getX();
 
-    private static final String TAG = "HpApplication";
 
     private String AZURE_URL = EncryptionDecryption.decryptUid(getProUrl(),getX());;
     public static boolean azureStatus;
 
 
     public void buildAzureConnection(Context context) {
-
         StringRequest request = new StringRequest(Request.Method.GET, AZURE_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "onResponse: "+response);
                 String key = "AsureStatus";
                 try {
                     JSONObject jsonObject = new JSONObject(response);
