@@ -25,7 +25,7 @@ public class AzureApplication {
     public native String getX();
 
 
-    private String AZURE_URL = EncryptionDecryption.decryptUid(getProUrl(),getX());;
+    private String AZURE_URL = EncryptionDecryption.decryptUid(getProUrl(),getX());
     public static boolean azureStatus;
 
 
